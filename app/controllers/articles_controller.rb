@@ -1,6 +1,12 @@
 class ArticlesController < ApplicationController
     def index
         @articles = Article.all
+        respond_to do |format|
+          format.html
+          format.pdf do
+            render pdf: "pdf_de_prueba"   # Excluding ".pdf" extension.
+          end
+        end
     end
     def show
         @article = Article.find(params[:id])
