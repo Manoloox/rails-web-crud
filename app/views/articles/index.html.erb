@@ -10,7 +10,7 @@
     <th colspan="3"></th>
   </tr>
 
-  <% @articles.each do |article| %>
+  <% @articles && @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
