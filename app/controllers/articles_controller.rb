@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
         respond_to do |format|
           format.html
           format.pdf do
-            render pdf: "pdf_de_prueba"   # Excluding ".pdf" extension.
+            headers["Content-Disposition"] = "attachment; filename=\"reporte-#{Time.now.to_i}.pdf\""
           end
         end
     end
